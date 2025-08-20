@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Dhara Resort & Convention Design System - All colors in HSL format */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --deep-lake: 156 57% 19%;
+    --forest: 150 24% 21%;
+    --sage: 120 20% 92%;
+    --core-off-white: 0 0% 98%;
+    --premium-print: 0 0% 25%;
+    --copper: 25 95% 65%;
+    
+    /* Semantic Design Tokens */
+    --background: var(--core-off-white);
+    --foreground: var(--premium-print);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: var(--core-off-white);
+    --card-foreground: var(--premium-print);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--core-off-white);
+    --popover-foreground: var(--premium-print);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--deep-lake);
+    --primary-foreground: var(--core-off-white);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--sage);
+    --secondary-foreground: var(--premium-print);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--sage);
+    --muted-foreground: 150 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--copper);
+    --accent-foreground: var(--core-off-white);
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--core-off-white);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: var(--deep-lake);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom gradients and shadows */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-lake) / 0.3), hsl(var(--forest) / 0.3));
+    --shadow-luxury: 0 20px 40px -10px hsl(var(--deep-lake) / 0.15);
+    --shadow-card: 0 8px 25px -5px hsl(var(--deep-lake) / 0.1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +69,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode maintains the same brand colors but inverted relationships */
+    --background: var(--forest);
+    --foreground: var(--core-off-white);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: var(--deep-lake);
+    --card-foreground: var(--core-off-white);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--deep-lake);
+    --popover-foreground: var(--core-off-white);
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--copper);
+    --primary-foreground: var(--premium-print);
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 150 20% 15%;
+    --secondary-foreground: var(--core-off-white);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 150 20% 15%;
+    --muted-foreground: 150 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--copper);
+    --accent-foreground: var(--premium-print);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: var(--core-off-white);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 150 15% 25%;
+    --input: 150 15% 25%;
+    --ring: var(--copper);
+    
+    --sidebar-background: var(--deep-lake);
+    --sidebar-foreground: var(--core-off-white);
+    --sidebar-primary: var(--copper);
+    --sidebar-primary-foreground: var(--premium-print);
+    --sidebar-accent: 150 20% 25%;
+    --sidebar-accent-foreground: var(--core-off-white);
+    --sidebar-border: 150 15% 25%;
+    --sidebar-ring: var(--copper);
   }
 }
 
@@ -101,5 +116,58 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations and utility classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);  
+  }
+
+  .bg-forest {
+    background-color: hsl(var(--forest));
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
