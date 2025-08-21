@@ -17,6 +17,7 @@ const dharaLogo = "/lovable-uploads/ea8bc108-9b38-4694-a2bf-a3683d6456f3.png";
 const nightVenueAerial = "/lovable-uploads/ffd5b576-8bb9-46c0-bd72-24277dca0b9e.png";
 
 const Index = () => {
+  console.log('Index component rendering...');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navbarBg, setNavbarBg] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
