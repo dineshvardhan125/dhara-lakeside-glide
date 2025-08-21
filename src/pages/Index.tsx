@@ -118,7 +118,7 @@ const Index = () => {
             <img 
               src={dharaLogo} 
               alt="Dhara Resort & Convention" 
-              className="h-12 w-auto"
+              className="h-48 w-auto"
             />
           </div>
 
@@ -172,7 +172,7 @@ const Index = () => {
           <img 
             src={dharaLogo} 
             alt="Dhara Resort & Convention" 
-            className="h-24 w-auto mx-auto mb-8 animate-scale-in"
+            className="h-96 w-auto mx-auto mb-8 animate-scale-in"
           />
           <h1 className="font-fraunces text-5xl md:text-7xl font-semibold mb-6 leading-tight">
             A Lakeside Escape for Every Occasion
