@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import ProcessedLogo from "@/components/ProcessedLogo";
 
 // Real Dhara Resort Images
 const heroBackground = "/lovable-uploads/fe14f8aa-a748-40b8-b4b8-aa3d97e126b5.png";
@@ -12,7 +13,8 @@ const luxuryRoom = "/lovable-uploads/4a196bdb-3366-4d9c-ac59-53f224ca7641.png";
 const caravanStay = "/lovable-uploads/fcc4f3da-9bc9-4f96-ab3f-d671515f8ed2.png";
 const lakesideTenting = "/lovable-uploads/a0bfd069-9149-4ec1-b9af-9e5bb934bcea.png";
 const amenities = "/lovable-uploads/1c1e0edb-d99f-4fa9-a3ac-772f42e440c6.png";
-const dharaLogo = "/lovable-uploads/ea8bc108-9b38-4694-a2bf-a3683d6456f3.png";
+const dharaLogo = "/lovable-uploads/112d1fd0-ed67-4d60-aaff-2fa97c5bf04c.png";
+const dharaLogoFallback = "/lovable-uploads/ea8bc108-9b38-4694-a2bf-a3683d6456f3.png";
 const nightVenueAerial = "/lovable-uploads/ffd5b576-8bb9-46c0-bd72-24277dca0b9e.png";
 
 const Index = () => {
@@ -115,8 +117,9 @@ const Index = () => {
       }`}>
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <img 
-              src={dharaLogo} 
+            <ProcessedLogo 
+              originalUrl={dharaLogo}
+              fallbackUrl={dharaLogoFallback}
               alt="Dhara Resort & Convention" 
               className="h-48 w-auto"
             />
@@ -169,8 +172,9 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-primary/30"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
-          <img 
-            src={dharaLogo} 
+          <ProcessedLogo 
+            originalUrl={dharaLogo}
+            fallbackUrl={dharaLogoFallback}
             alt="Dhara Resort & Convention" 
             className="h-96 w-auto mx-auto mb-8 animate-scale-in"
           />
@@ -395,8 +399,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <img 
-                src={dharaLogo} 
+              <ProcessedLogo 
+                originalUrl={dharaLogo}
+                fallbackUrl={dharaLogoFallback}
                 alt="Dhara Resort & Convention" 
                 className="h-16 w-auto mb-4"
               />
