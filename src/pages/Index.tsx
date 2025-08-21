@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 // Real Dhara Resort Images
 const heroBackground = "/lovable-uploads/fe14f8aa-a748-40b8-b4b8-aa3d97e126b5.png";
@@ -389,6 +390,9 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       {/* Footer / Contact Section */}
       <footer id="contact" className="py-16 bg-primary text-white">
