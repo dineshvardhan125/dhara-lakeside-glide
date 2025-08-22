@@ -198,15 +198,15 @@ const Index = () => {
           </Button>
           
           {/* WhatsApp Contact */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="mt-8">
             <a 
               href="https://wa.me/918399839999" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
+              className="flex items-center justify-center space-x-3 text-white hover:text-accent transition-colors duration-300 group"
             >
               <svg 
-                className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" 
+                className="w-6 h-6 text-green-500 group-hover:scale-110 transition-transform duration-300" 
                 fill="currentColor" 
                 viewBox="0 0 24 24"
               >
