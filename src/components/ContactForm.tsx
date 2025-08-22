@@ -36,31 +36,37 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      console.log("Form submitted:", data);
-      setIsSubmitted(true);
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us! We'll get back to you soon.",
-      });
+const onSubmit = async (data: ContactFormData) => {
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbw61lUI-aoBx2d8YCk6cSrwy6c1KQLqtEWyXNodFf4SxZUAyTK7S_PS43Bq0V1Hy-Rl/exec", {
+      method: "POST",
+      mode: "no-cors", // Required for Google Apps Script
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-      form.reset();
-      
-      // Reset success state after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
+    setIsSubmitted(true);
+
+    toast({
+      title: "Message Sent!",
+      description: "Your details have been saved to Google Sheets.",
+    });
+
+    form.reset();
+
+    // Reset success state after 5 seconds
+    setTimeout(() => setIsSubmitted(false), 5000);
+
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive",
+    });
+  }
+};
 
   if (isSubmitted) {
     return (
