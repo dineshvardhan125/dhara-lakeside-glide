@@ -215,13 +215,39 @@ const Index = () => {
             <h2 className="font-fraunces text-4xl md:text-5xl font-semibold mb-8 text-primary">
               An Escape Within the City
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-12">
               Nestled across 14 pristine acres beside the serene Himayat Sagar Lake, Dhara Resort & Convention offers 
               an unparalleled blend of natural beauty and modern luxury. Just 30-45 minutes from Hyderabad's bustling 
               business hubs, our resort provides the perfect sanctuary for weddings, corporate events, and intimate retreats. 
               Experience the tranquility of lakeside living while enjoying world-class amenities and impeccable service 
               that transforms every gathering into an unforgettable celebration.
             </p>
+            
+            {/* Video Section */}
+            <div className="max-w-5xl mx-auto">
+              <div className="relative group">
+                <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl bg-card border-4 border-accent/20 hover:border-accent/40 transition-all duration-500">
+                  <iframe
+                    src="https://www.youtube.com/embed/FYQ37oI9e8o"
+                    title="Dhara Resort & Convention - Virtual Tour"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+              </div>
+              
+              <div className="text-center mt-8">
+                <Button 
+                  onClick={() => window.open("https://www.youtube.com/@DharaResort", "_blank")}
+                  className="bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Visit Our YouTube Channel
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
