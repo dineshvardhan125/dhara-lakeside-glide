@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 // Real Dhara Resort Images
 const heroBackground = "/lovable-uploads/fe14f8aa-a748-40b8-b4b8-aa3d97e126b5.png";
@@ -171,17 +172,23 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-primary/30"></div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 animate-fade-in">
-          <img 
-            src={dharaLogo} 
-            alt="Dhara Resort & Convention" 
-            className="h-24 w-auto mx-auto mb-8 animate-scale-in"
-          />
-          <h1 className="font-fraunces text-5xl md:text-7xl font-semibold mb-6 leading-tight">
-            A Lakeside Escape for Every Occasion
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 font-medium leading-relaxed">
-            Celebrate life's moments at Hyderabad's premier 14-acre lakeside retreat.
-          </p>
+          <BlurFade delay={0.25} inView>
+            <img 
+              src={dharaLogo} 
+              alt="Dhara Resort & Convention" 
+              className="h-24 w-auto mx-auto mb-8"
+            />
+          </BlurFade>
+          <BlurFade delay={0.5} inView>
+            <h1 className="font-fraunces text-5xl md:text-7xl font-semibold mb-6 leading-tight">
+              A Lakeside Escape for Every Occasion
+            </h1>
+          </BlurFade>
+          <BlurFade delay={0.75} inView>
+            <p className="text-xl md:text-2xl mb-8 font-medium leading-relaxed">
+              Celebrate life's moments at Hyderabad's premier 14-acre lakeside retreat.
+            </p>
+          </BlurFade>
           <Button 
             onClick={() => scrollToSection("contact")}
             className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-luxury"
