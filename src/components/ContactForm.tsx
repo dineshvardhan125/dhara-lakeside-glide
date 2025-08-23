@@ -39,6 +39,26 @@ const ContactForm = () => {
 
 const onSubmit = async (data: ContactFormData) => {
   try {
+    // Validate form data
+    const validationResult = contactSchema.safeParse(data);
+    
+    if (!validationResult.success) {
+      // Show validation errors and reset form
+      toast({
+        title: "Validation Error",
+        description: "Please check all fields and enter correct information.",
+        variant: "destructive",
+      });
+      
+      // Auto-refresh form after 2 seconds
+      setTimeout(() => {
+        form.reset();
+        window.location.reload();
+      }, 2000);
+      
+      return;
+    }
+
     const response = await fetch("https://script.google.com/macros/s/AKfycbw61lUI-aoBx2d8YCk6cSrwy6c1KQLqtEWyXNodFf4SxZUAyTK7S_PS43Bq0V1Hy-Rl/exec", {
       method: "POST",
       mode: "no-cors", // Required for Google Apps Script
@@ -66,6 +86,12 @@ const onSubmit = async (data: ContactFormData) => {
       description: "Something went wrong. Please try again.",
       variant: "destructive",
     });
+    
+    // Auto-refresh form on error
+    setTimeout(() => {
+      form.reset();
+      window.location.reload();
+    }, 2000);
   }
 };
 
