@@ -500,7 +500,7 @@ const Index = () => {
           </div>
           <div className="border-t border-white/20 pt-8 text-center">
             <p className="opacity-70">
-              © 2024 Dhara Resort & Convention. All rights reserved.
+              © 2025 Dhara Resort & Convention. All rights reserved.
             </p>
           </div>
         </div>
