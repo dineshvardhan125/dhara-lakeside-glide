@@ -15,7 +15,7 @@ const contactSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string()
-    .regex(/^\d{10}$/, "Please enter a correct 10-digit phone number"),
+    .regex(/^\d{10}$/, "Enter 10 digit number"),
   eventType: z.string().min(1, "Please select an event type"),
   message: z.string().optional(),
 });
